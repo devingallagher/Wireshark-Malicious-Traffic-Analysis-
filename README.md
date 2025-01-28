@@ -1,114 +1,32 @@
+# Wireshark Analysis and IOC Investigation
 
-# Wireshark Malicious Traffic Analysis
+This repository provides a structured walkthrough of a Wireshark analysis tutorial, focusing on identifying Indicators of Compromise (IOCs) and investigating malicious network activity. It documents key steps for network forensics and traffic analysis.
 
-## Project Overview
-This project demonstrates the analysis of malicious network traffic using Wireshark, inspired by Chris Greer's video tutorial. The analysis focuses on DNS filtering, HTTP traffic inspection, GeoIP configuration, and data extraction from a malicious PCAP file containing **real live malware**. These skills are essential for Security Analysts working in threat detection and response.
+## Objectives
 
----
+1. Learn how to use Wireshark effectively for network analysis.
+2. Identify Indicators of Compromise (IOCs) in network traffic.
+3. Extract key information such as IP addresses, MAC addresses, hostnames, and downloaded files.
+4. Analyze traffic using filters and understand protocol hierarchies.
+5. Integrate findings with tools like VirusTotal for additional insights.
 
-## Skills Demonstrated
-1. **DNS Filtering**: Identifying malicious domains by analyzing DNS queries and responses.
-2. **HTTP Traffic Analysis**: Inspecting requests and responses to find leaked data (e.g., usernames, passwords, and system information).
-3. **GeoIP Mapping**: Mapping attacker IP addresses to geographic locations using Wireshark's GeoIP database.
-4. **File Extraction**: Recovering hidden executables and sensitive data from network traffic.
+## Key Features
 
----
+- **Understanding Wireshark's Interface**: Navigate the protocol hierarchy and customize the interface by adding relevant columns.
+- **Using Filters**: Apply filters to focus on specific types of network traffic.
+- **IOC Investigation**: Identify infected files, find hash values, and analyze their origins.
+- **Device Information Retrieval**: Extract IP addresses, MAC addresses, and hostnames of affected machines.
+- **Practical Exercises**: Reinforce learning with additional exercises from [Malware Traffic Analysis](https://malware-traffic-analysis.net).
 
-## Steps Followed
-1. **DNS Analysis**:
-   - Filtered DNS queries using `dns.qry.name contains "malicious-domain.com"`.
-   - Identified suspicious domains and resolved their IP addresses.
+## Additional Resources
 
-2. **HTTP Requests and Data Extraction**:
-   - Applied HTTP filters (e.g., `http.request.method == "POST"`) to detect sensitive data leaks.
-   - Exported usernames, passwords, and hidden files from HTTP responses.
+- [Wireshark Official Documentation](https://www.wireshark.org/docs/wsug_html_chunked/)
+- [Malware Traffic Analysis](https://malware-traffic-analysis.net)
 
-3. **GeoIP Configuration**:
-   - Configured Wireshark to use the GeoIP database.
-   - Mapped source and destination IP addresses to geographic locations for attacker analysis.
+## Contributing
 
-4. **File Extraction**:
-   - Extracted hidden executables using Wireshark’s file export feature.
-   - Verified files using hash tools to detect known malware signatures.
-
----
-
-## Tools Used
-- **Wireshark**: For packet analysis, filtering, and exporting data.
-- **Python**: For automating file extraction and GeoIP lookups.
-- **GeoIP Database**: For mapping IP addresses to geographic locations.
-
----
-
-## Repository Structure
-```
-Wireshark-Malicious-Traffic-Analysis
-├── README.md
-├── PCAPs/
-│   ├── malicious_sample.pcap (link to source)
-│   ├── normal_traffic.pcap (optional, for comparison)
-├── analysis/
-│   ├── dns_analysis.md
-│   ├── http_analysis.md
-│   ├── geoip_mapping.md
-│   ├── exported_data/
-│   │   ├── usernames_passwords.txt
-│   │   ├── system_info.txt
-│   │   ├── hidden_exe.md
-│   ├── screenshots/
-│   │   ├── dns_filter.png
-│   │   ├── http_requests.png
-│   │   ├── geoip_example.png
-├── scripts/
-│   ├── extract_hidden_exe.py
-│   ├── automate_geoip.py
-├── LICENSE
-└── .gitignore
-```
-
----
-
-## Sample Analysis and Findings
-### DNS Analysis
-- Filtered traffic using `dns.qry.name contains "malicious-domain.com"`.
-- Identified suspicious domains resolving to known malicious IPs (e.g., `203.0.113.45`).
-
-### HTTP Traffic Analysis
-- Inspected HTTP POST requests leaking sensitive data:
-  - **Exported Data**:
-    - Username: `admin`
-    - Password: `password123`
-  - Hidden file URL: `http://malicious-site.com/hidden.exe`
-
-### GeoIP Mapping
-- Configured GeoIP to analyze attacker locations:
-  - **Example Result**:
-    - Attacker IP: `203.0.113.45` → Location: New York, USA
-
----
-
-## How to Use This Repository
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/Wireshark-Malicious-Traffic-Analysis.git
-   ```
-
-2. **PCAP Analysis**:
-   - Open `malicious_sample.pcap` in Wireshark.
-   - Follow the steps in `analysis/dns_analysis.md` and `http_analysis.md`.
-
-3. **Run Scripts**:
-   - Use `scripts/extract_hidden_exe.py` to automate file extraction from the PCAP.
-   - Run `scripts/automate_geoip.py` to map IP addresses.
-
----
-
-## Resources
-- [Chris Greer’s Video Tutorial](https://www.youtube.com/watch?v=M8yoYmiL7rA)
-- [Malware Traffic Analysis PCAPs](https://malware-traffic-analysis.net/) (Password: `infected`)
-- [Wireshark Documentation](https://www.wireshark.org/docs/)
-
----
+Contributions are welcome! Submit a pull request to add more resources or improve the documentation.
 
 ## License
-This project is licensed under the MIT License. See `LICENSE` for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
