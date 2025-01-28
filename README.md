@@ -6,21 +6,21 @@ This repository provides a structured walkthrough of a Wireshark analysis tutori
 
 ```
 Wireshark-IOC-Investigation/
-├── README.md # Main documentation
-├── PCAPs/ # PCAP files (if available)
-├── analysis/ # Detailed analysis and results
-│ ├── export.png # Exported HTTP objects from Wireshark
-│ ├── find_host_name.png # Extracted hostnames from network traffic
-│ ├── find_mac_address.png # Extracted MAC addresses of infected machines
-│ ├── find_url_of_infected_sites.png # Domains and URLs of malicious websites
-│ ├── first_hash.png # VirusTotal scan of first hash
-│ ├── get_hashes.png # Extracted hashes from infected files
-│ ├── hierarchy_protocol_http_filter.png # Protocol hierarchy and filter usage
-│ ├── http_request.png # HTTP request analysis with packet details
-│ ├── second_hash.png # VirusTotal scan of second hash
-│ ├── third_hash.png # VirusTotal scan of third hash
-├── images/ # Supporting images and screenshots
-│ ├── questions.png # Investigation summary image
+├── README.md                                      # Main documentation
+├── PCAPs/                                         # PCAP files (if available)
+├── analysis/                                      # Detailed analysis and results
+│ ├── export.png                                   # Exported HTTP objects from Wireshark
+│ ├── find_host_name.png                           # Extracted hostnames from network traffic
+│ ├── find_mac_address.png                         # Extracted MAC addresses of infected machines
+│ ├── find_url_of_infected_sites.png               # Domains and URLs of malicious websites
+│ ├── first_hash.png                               # VirusTotal scan of first hash
+│ ├── get_hashes.png                               # Extracted hashes from infected files
+│ ├── hierarchy_protocol_http_filter.png           # Protocol hierarchy and filter usage
+│ ├── http_request.png                             # HTTP request analysis with packet details
+│ ├── second_hash.png                              # VirusTotal scan of second hash
+│ ├── third_hash.png                               # VirusTotal scan of third hash
+├── images/                                        # Supporting images and screenshots
+│ ├── questions.png                                # Investigation summary image
 ```
 ## Investigation Workflow
 
